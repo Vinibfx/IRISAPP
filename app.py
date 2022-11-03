@@ -1,20 +1,19 @@
-import streamlit as st #do st things
-import pandas as pd #process dataframes
+import streamlit as st 
+import pandas as pd 
 
-from sklearn import datasets #get toy datsets
+from sklearn import datasets 
 
 from sklearn.ensemble import RandomForestClassifier
 
 
 st.write("""
-# Simple iris prediction app
-This app predicts the **Iris flower ** type!
+**Flor Iris **
 """)
 
-st.sidebar.header('User input Parameters')
+st.sidebar.header('Parametro de entrada')
 
 def user_input_features():
-    # sntax : start , end , default
+   
     sepal_len = st.sidebar.slider('Sepal length',4.3,7.9,5.4)
     sepal_wid = st.sidebar.slider('Sepal width',2.0,4.4,3.4)
     petal_len = st.sidebar.slider('Petal Length',1.0,6.9,1.3)
@@ -31,23 +30,22 @@ df = user_input_features()
 st.subheader('User input parameters')
 st.write(df)
 
-iris = datasets.load_iris() #directly get training data from datasets module
+iris = datasets.load_iris() 
 
 X = iris.data
 Y = iris.target
 
-clf = RandomForestClassifier()  #here re 4 classes
+clf = RandomForestClassifier()  
 clf.fit(X,Y)
 
 prediction = clf.predict(df)
 prediction_proba = clf.predict_proba(df)
 
-st.write('Class labels and corresponding index numbers')
+st.write('Rotulo de classes e numero de indice correspondente')
 st.write(iris.target_names)
 
-st.subheader('Prediction')
-# st.write(prediction)    #gives inx-coz one hot encoded?
+st.subheader('Predição')
 st.write(iris.target_names[prediction])
 
-st.subheader('Prection probability')
+st.subheader('Probabilidade')
 st.write(prediction_proba)
