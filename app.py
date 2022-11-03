@@ -3,7 +3,7 @@ import pandas as pd
 
 from sklearn import datasets 
 
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.naive_bayes import GaussianNB
 
 
 st.write("""
