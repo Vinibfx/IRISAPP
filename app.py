@@ -47,3 +47,25 @@ st.write(iris.target_names[prediction])
 
 st.subheader('Probabilidade')
 st.write(prediction_proba)
+
+if resultado == ('Iris-setosa'): 
+
+st.write('setosa') 
+
+st.image('setosa.png') 
+
+ 
+
+if resultado == ('Iris-versicolor'): 
+
+st.write('versicolor') 
+
+st.image('versicolor.png') 
+
+ 
+
+if resultado == ('Iris-virginica'): 
+
+st.write('virginica') 
+
+st.image('virginica.png') 
