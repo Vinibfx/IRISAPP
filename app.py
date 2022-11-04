@@ -49,6 +49,7 @@ st.subheader('Probabilidade')
 st.write(prediction_proba)
 
 #st.write(prediction)
+#PRESTAR ATENÇÃO EM QUAL É A  PREDIÇÃO
 
 if prediction == 0:
    st.write('setosa') 
